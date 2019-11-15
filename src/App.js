@@ -1,9 +1,9 @@
 import React from 'react';
-import Notes from './components/Notes/ListNotes/ListNotes'
+import Landing from './components/Notes/Landing/landing'
 
 function App() {
   return (
-    <div>
+    <div className='container'>
       <header>
         <h1 className="text-center">Notes</h1>
       </header>
@@ -15,7 +15,7 @@ function App() {
         <div>
           Notes here
         </div>
-        <Notes />
+        <Landing />
       </section>
     </div>
   );
