@@ -4,34 +4,47 @@
         "title":"Interesting facts",
         "text":"Blah Blah Blaaa",
         "author":"John Doe",
-        "status":"published"
+        "status":"published",
+        "date":"12.20.2018"
     },
     {
         "id":1,
-        "title":"Interesting facts",
+        "title":"New Facts",
         "text":"fact #2",
         "author":"John Doe",
-        "status":"published"
+        "status":"published",
+        "date":"2.20.2018"
     },
     {
         "id":2,
-        "title":"Interesting facts",
+        "title":"Another Fact",
         "text":"fact #3",
         "author":"John Doe",
-        "status":"published"
+        "status":"published",
+        "date":"3.20.2018"
     },
     {
         "id":3,
-        "title":"Interesting facts",
+        "title":"Facts",
         "text":"fact #4",
         "author":"John Doe",
-        "status":"published"
+        "status":"published",
+        "date":"2.10.2018"
     },
     {
         "id":4,
-        "title":"Interesting facts",
+        "title":"Sad Facts",
         "text":"fact #5",
         "author":"John Doe",
-        "status":"published"
+        "status":"published",
+        "date":"2.30.2018"
+    },
+    {
+        "id":50,
+        "title":"aaaaaaaaaaaaaaaa",
+        "text":"Blah Blah Blaaa",
+        "author":"John Doe",
+        "status":"draft",
+        "date":"10.20.2018"
     }
 ]

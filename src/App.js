@@ -9,8 +9,7 @@ function App() {
       </header>
       <section>
         <div>
-          <button type="button" className="btn btn-primary">Sort</button>
-          <button type="button" className="btn btn-success">Filter</button>
+
         </div>
         <div>
           Notes here
