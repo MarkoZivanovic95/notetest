@@ -10,19 +10,21 @@ const NewNote=(props)=>{
         setStyle({display:'none'})
     }
     return(
-        <div>
-            <button>New Note</button>
-            <button id="myBtn" onClick={()=>showModal()}>Open Modal</button>
-            <div id="myModal" class="modal" style={style}>
-                <div class="modal-content">
-                    <span class="close" onClick={()=>closeModal()}>&times;</span>
+        <div className='text-right'>
+            <button id="myBtn" className='btn btn-success' onClick={()=>showModal()}>New Note</button>
+            <div id="myModal" className="modal text-center" style={style}>
+                <div className="modal-content">
+                    <span className="close" onClick={()=>closeModal()}>&times;</span>
                     <div>
                         <input id='newtitle' placeholder='title'></input>
+                        <br/>
                         <input id='newtext' placeholder='text'></input>
+                        <br/>
                         <input id='newauthor' placeholder='author'></input>
+                        <br/>
                         <select name="list" id="noteStatus">
                             <option value="published">publish</option>
-                            <option value="draft">draft</option>
+                            <option value="draft">save as draft</option>
                          </select>
                         <button  onClick={props.addNewNote}>Submit</button>
                     </div>

@@ -18,7 +18,7 @@
     {
         "id":2,
         "title":"Another Fact",
-        "text":"fact #3",
+        "text":"fact #3 fact #3 fact #3 fact #3 fact #3 fact #3 fact #3 fact #3 fact #3 fact #3 fact #3 fact #3 fact #3 fact #3",
         "author":"John Doe",
         "status":"published",
         "date":"3.20.2018"
@@ -40,7 +40,7 @@
         "date":"2.30.2018"
     },
     {
-        "id":50,
+        "id":5,
         "title":"aaaaaaaaaaaaaaaa",
         "text":"Blah Blah Blaaa",
         "author":"John Doe",

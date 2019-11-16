@@ -8,12 +8,6 @@ function App() {
         <h1 className="text-center">Notes</h1>
       </header>
       <section>
-        <div>
-
-        </div>
-        <div>
-          Notes here
-        </div>
         <Landing />
       </section>
     </div>
