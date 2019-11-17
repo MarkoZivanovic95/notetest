@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import SingleNote from '../SingleNote/SingleNote';
 import NotesJson from '../../../json/Notes.json'
-import NewNote from '../NewNote/NewNote'
+import FilterSortNew from '../FilterSortNew/FilterSortNew'
 import './Landing.css'
 
 const NoteList=()=>{
     var [arrayOfNotes, setArray] = useState(NotesJson)
     var [NoteStatus, setStatus] = useState('published')
-    var [value, setSort] = useState()
+    var [filterValue, setSort] = useState()
     // function for deleting note, filtering the array based on id, then removing said object
     const DeleteNote=(id)=>{
         let result = arrayOfNotes.filter(obj => {
@@ -15,6 +15,7 @@ const NoteList=()=>{
         })
         let indexFromObject=arrayOfNotes.indexOf(result[0])
         let removedObject=[...arrayOfNotes.splice(indexFromObject,1)]
+        console.log(removedObject)
         let newArrayOfNotes=[...arrayOfNotes]
         setArray(newArrayOfNotes)
     }
@@ -46,22 +47,13 @@ const NoteList=()=>{
             setArray(newArrayOfNotes)
         }
     }
-    // function to filter notes based on title and imput, not woking atm
-    // const FilterNotes=()=>{
-    //     var lettersForFilter=document.getElementById('filter').value
-    //     console.log(lettersForFilter)
-    //     let wwwww=[...arrayOfNotes]
-    //     let ccc=wwwww.filter(item=>item.title.includes(lettersForFilter))
-    //     setSort(ccc)
-    //     console.log(sortArray)
-    // }
-    // function for date sort, simple compare function
+    // sorts by date,from newest to oldest
     const SortByDate=()=>{
         let arraySortedByDate=[...arrayOfNotes]
         arraySortedByDate.sort(function(a,b){
             var c = new Date(a.date);
             var d = new Date(b.date);
-            return c-d;
+            return d-c;
         });
         setArray(arraySortedByDate)
     }
@@ -74,21 +66,27 @@ const NoteList=()=>{
         }
     }
     // showing only published,changing button text
-    const publishDraft=(id)=>{
+    const publishDraft=(idForArray)=>{
         let arrayOfDrafts=[...arrayOfNotes]
-        arrayOfDrafts[id].status='published'
+        var indexOfId = arrayOfDrafts.findIndex(obj => obj.id === idForArray);
+        arrayOfDrafts[indexOfId].status='published'
         setArray(arrayOfDrafts)
     }
     return(
         <div className='container'>
-            <button type="button" className="btn btn-primary" onClick={()=>showDrafrs()}>{NoteStatus}</button>
-            <button type="button" className="btn btn-primary" onClick={()=>SortByDate()}>Sort By Date</button>
-            <input id='filter' placeholder='Filter' onChange={e => setSort(e.target.value)}></input>
+            <FilterSortNew 
+                addNewNote={addNewNote} 
+                clickedStatus={()=>showDrafrs()} 
+                checkNoteStatus={NoteStatus} 
+                clickedSort={()=>SortByDate()} 
+                changed={e => setSort(e.target.value)}
+            />
             <div className='row notes'>
                 {
+                    // filter function added, filter value is set to state then array is filtered based on that state
                     arrayOfNotes.filter(item => {
-                    if (!value) return true
-                    if (item.title.toLowerCase().includes(value) || item.text.includes(value)) {
+                    if (!filterValue) return true
+                    if (item.title.toLowerCase().includes(filterValue) && item.title[0].toLowerCase() === filterValue[0]) {
                         return true
                     }
                     })
@@ -106,9 +104,10 @@ const NoteList=()=>{
                                                 author={note.author}
                                                 status={note.status}
                                                 date={note.date}
+                                                delete={()=>DeleteNote(note.id)}
+                                                publish={()=>publishDraft(note.id)}
+                                                publishCheck='yes'
                                             />
-                                            <button type="button" className="btn btn-danger" onClick={()=>DeleteNote(note.id)}>Delete</button>
-                                            <button type="button" className="btn btn-danger" onClick={()=>publishDraft(note.id)}>Publish</button>
                                         </div>
                                 </div>
                                 )
@@ -124,8 +123,9 @@ const NoteList=()=>{
                                             author={note.author}
                                             status={note.status}
                                             date={note.date}
+                                            delete={()=>DeleteNote(note.id)}
+                                            publish={()=>publishDraft(note.id)}
                                         />
-                                        <button type="button" className="btn btn-danger" onClick={()=>DeleteNote(note.id)}>Delete</button>
                                     </div>
                                 </div>
                             )
@@ -133,14 +133,8 @@ const NoteList=()=>{
                     })
                 }
             </div>
-            <NewNote addNewNote={addNewNote}/>
         </div>
     )
 }
-const Landing =()=>(
-    <div>
-        {NoteList()}
-    </div>
-);
 
 export default NoteList;

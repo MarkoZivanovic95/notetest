@@ -11,6 +11,8 @@
     padding: 10px;
     border-radius: 8px;
 }
-.btn-primary,.btn-danger{
-    margin: auto 5px;
+@media only screen and (max-width: 768px) {
+    .filterInput{
+        margin: 5px;
+    }
 }
