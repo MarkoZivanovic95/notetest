@@ -15,19 +15,19 @@ const NewNote=(props)=>{
             <div id="myModal" className="modal text-center" style={style}>
                 <div className="modal-content">
                     <span className="close" onClick={()=>closeModal()}>&times;</span>
-                    <div>
-                        <input id='newtitle' placeholder='title'></input>
+                    <form>
+                        <input className='inputFieldForNewModal' id='newtitle' placeholder='title'></input>
                         <br/>
-                        <input id='newtext' placeholder='text'></input>
+                        <textarea className='inputFieldForNewModal' id='newtext' placeholder='text'></textarea>
                         <br/>
-                        <input id='newauthor' placeholder='author'></input>
+                        <input className='inputFieldForNewModal' id='newauthor' placeholder='author'></input>
                         <br/>
                         <select name="list" id="noteStatus">
                             <option value="published">publish</option>
                             <option value="draft">save as draft</option>
                          </select>
-                        <button  onClick={props.addNewNote}>Submit</button>
-                    </div>
+                        <button type='button' className='submitStatus' onClick={props.addNewNote}>Add note</button>
+                    </form>
                 </div>
             </div>
         </div>

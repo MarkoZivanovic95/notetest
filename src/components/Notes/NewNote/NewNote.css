@@ -16,7 +16,7 @@
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
 }
 .close {
   color: #aaaaaa;
@@ -31,6 +31,25 @@
   text-decoration: none;
   cursor: pointer;
 }
-.newNoteDiv{
-  
+.inputFieldForNewModal{
+  width: 35%;
+  margin: 5px auto;
+  padding: 4px 8px;
+}
+.submitStatus{
+  margin: auto 5px;
+}
+@media only screen and (max-width: 768px) {
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  .inputFieldForNewModal{
+    width: 80%;
+    margin: 5px auto;
+    padding: 4px 8px;
+  }
 }

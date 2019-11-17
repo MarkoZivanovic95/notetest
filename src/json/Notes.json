@@ -1,49 +1,49 @@
 [
     {
         "id":0,
-        "title":"Interesting facts",
-        "text":"Blah Blah Blaaa",
-        "author":"John Doe",
+        "title":"Scotland",
+        "text":"Scotland has 421 words for “snow”",
+        "author":"John One",
         "status":"published",
         "date":"12.20.2018"
     },
     {
         "id":1,
-        "title":"New Facts",
-        "text":"fact #2",
-        "author":"John Doe",
+        "title":"Canadians",
+        "text":"Canadians say “sorry” so much that a law was passed in 2009 declaring that an apology can’t be used as evidence of admission to guilt.",
+        "author":"John Two",
         "status":"published",
         "date":"2.20.2018"
     },
     {
         "id":2,
-        "title":"Another Fact",
-        "text":"fact #3 fact #3 fact #3 fact #3 fact #3 fact #3 fact #3 fact #3 fact #3 fact #3 fact #3 fact #3 fact #3 fact #3",
-        "author":"John Doe",
+        "title":"Time travel",
+        "text":"In 2009, Stephen Hawking held a reception for time travelers, but didn’t publicize it until after. This way, only those who could time travel would be able to attend. Nobody else attended.",
+        "author":"John Three",
         "status":"published",
         "date":"3.20.2018"
     },
     {
         "id":3,
-        "title":"Facts",
-        "text":"fact #4",
-        "author":"John Doe",
+        "title":"AI chat",
+        "text":"There were two AI chatbots created by Facebook to talk to each other, but they were shut down after they started communicating in a language they made for themselves.",
+        "author":"John Four",
         "status":"published",
         "date":"2.10.2018"
     },
     {
         "id":4,
-        "title":"Sad Facts",
-        "text":"fact #5",
-        "author":"John Doe",
+        "title":"Prime number",
+        "text":"The largest known prime number has 17,425,170 digits. The new prime number is 2 multiplied by itself 57,885,161 times, minus 1.",
+        "author":"John Five",
         "status":"published",
-        "date":"2.30.2018"
+        "date":"2.30.2017"
     },
     {
         "id":5,
-        "title":"aaaaaaaaaaaaaaaa",
-        "text":"Blah Blah Blaaa",
-        "author":"John Doe",
+        "title":"Sharks",
+        "text":"Scientists discovered sharks that are living in an active underwater volcano. Divers cannot investigate because they would get burns from the acidity and heat.",
+        "author":"John Six",
         "status":"draft",
         "date":"10.20.2018"
     }
